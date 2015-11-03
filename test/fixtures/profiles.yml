@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  bio: MyString
+  birthday: 2015-11-03
+  gender: 1
+  looking_for: 1
+  interests: MyString
+
+two:
+  user_id: 1
+  bio: MyString
+  birthday: 2015-11-03
+  gender: 1
+  looking_for: 1
+  interests: MyString
