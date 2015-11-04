@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103212858) do
+ActiveRecord::Schema.define(version: 20151103203839) do
 
   create_table "matches", force: :cascade do |t|
     t.integer  "first_user"
@@ -29,8 +29,6 @@ ActiveRecord::Schema.define(version: 20151103212858) do
     t.string   "interests"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "first_name"
-    t.string   "last_name"
   end
 
   create_table "users", force: :cascade do |t|
