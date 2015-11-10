@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     :passwords => 'passwords' }
     #:omniauth_callbacks => 'callbacks' }
 
+    get "users/:id", :controller => "users", :action => "index", as: :user
+    get "users/:id/settings", :controller => "users", :action => "edit", as: :edit
+    patch "users/:id/settings" => 'users#update', as: :update
+    # patch "settings/:id", :controller => "users", :action => "update_settings", as: :update
+    # put "settings/:id", :controller => "users", :action => "update_settings", as: :update
+
     
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

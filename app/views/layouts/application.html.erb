@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><%= content_for?(:title) ? yield(:title) : "Dating App" %></title>
+	<title><%= content_for?(:title) ? yield(:title) : "Dating App" %></title>
 
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "vendor/modernizr" %>
-  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<%= stylesheet_link_tag    "application" %>
+	<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 
 <body>
+	<nav class="top-bar" data-topbar data-no-turbolink role="navigation">
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="#">Dating App</a></h1>
+			</li>
+		</ul>
+		<section class="top-bar-section">
+			<% if user_signed_in? %>
 
-  <%= yield %>
+			<ul class="right">
+				<li><%= link_to "Matches", root_path %></li>
+				<li class="has-dropdown">
+					<a href="#">Account</a>
+					<ul class="dropdown">
+						<li><%= link_to "Profile", (user_path current_user) %></li>
+						<li><%= link_to "Settings", (edit_path current_user) %></li>
+						<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+					</ul>
+				</li>
+			</ul>
+
+			<% else %>
+			<ul class="right">
+				<li>Already have an account? &nbsp</li>
+				<li class="active"><%= link_to "Log In", new_user_session_path %></li>
+			</ul>
+			<% end %>
+		</section>
+	</nav>
+
+	<% if flash[:notice] %>
+	<div class="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<% if flash[:alert] %>
+	<div class="alert"><%= flash[:alert] %></div>
+	<% end %>
+
+	<%= yield %>
 
 </body>
 </html>

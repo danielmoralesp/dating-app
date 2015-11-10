@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel">
+			<div class="row">
+
+				<div class="large-10 small-6 columns">
+					<strong>Email Address<hr/></strong>
+
+					<%= form_for @current_user, :url => {:action => "update"} do |u| %>
+					<div class="field">
+						<%= u.email_field :email %>
+					</div>
+					<br />
+					<strong>Change your password<hr/></strong>
+					<div class="field">
+						<%= u.password_field :password %>
+					</div>
+					<div class="field">
+						<%= u.password_field :password_confirmation %>
+					</div>
+
+					<div class="actions">
+						<%= u.submit "Save" %>
+					</div>
+					<% end %>
+				</div>
+
+			</div>
+		</div>
+	</div>
