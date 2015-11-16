@@ -37,11 +37,10 @@ class UsersController < ApplicationController
 		end
 	end
 
-
 	private
 
 	def user_params
-		allow = [:email, :username, :image, :password, :password_confirmation, profile_attributes: [:first_name, :last_name, :bio, :gender, :looking_for, :birthday]]
+		allow = [:email, :username, :image, :password, :password_confirmation, profile_attributes: [:id, :first_name, :last_name, :bio, :gender, :looking_for, :birthday]]
 		params.require(:user).permit(allow)
 
 		

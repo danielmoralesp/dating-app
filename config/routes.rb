@@ -9,17 +9,13 @@ Rails.application.routes.draw do
   }
     #:omniauth_callbacks => 'callbacks'
 
-    resources :users do
-      resources :profiles
-    end
-
-    # get "users/:id", :controller => "users", :action => "index", as: :user
-    # get "users/:id/settings", :controller => "users", :action => "edit", as: :edit_user
-    # patch "users/:id" => 'users#update', as: :update
+    get "users/:id", :controller => "users", :action => "index", as: :user
+    get "users/:id/settings", :controller => "users", :action => "edit", as: :edit_user
+    patch "users/:id" => 'users#update', as: :update
   
-    # get "users/:id/profile", :controller => "profiles", :action => "show", as: :profile
-    # get "users/:id/profile/edit", :controller => "users", :action => "edit_profile", as: :edit_profile
-    # patch "users/:id/profile/edit" => 'users#update_profile'
+    get "users/:id/profile", :controller => "profiles", :action => "show", as: :profile
+    get "users/:id/profile/edit", :controller => "users", :action => "edit_profile", as: :edit_profile
+    patch "users/:id/profile/edit" => 'users#update_profile'
 
     
   # The priority is based upon order of creation: first created -> highest priority.

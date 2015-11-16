@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
-
   validates :password, presence: true, length: {minimum: 8, maximum: 120}, on: :create
   validates :password, length: {minimum: 8, maximum: 120}, on: :update, allow_blank: :true
   
