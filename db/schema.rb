@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106161858) do
+ActiveRecord::Schema.define(version: 20151113212106) do
 
   create_table "matches", force: :cascade do |t|
-    t.integer  "first_user"
-    t.integer  "second_user"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "user1_id"
+    t.integer  "user2_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "photos", force: :cascade do |t|
@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 20151106161858) do
     t.string   "image3_content_type"
     t.integer  "image3_file_size"
     t.datetime "image3_updated_at"
+    t.string   "image4_file_name"
+    t.string   "image4_content_type"
+    t.integer  "image4_file_size"
+    t.datetime "image4_updated_at"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -49,6 +53,16 @@ ActiveRecord::Schema.define(version: 20151106161858) do
     t.datetime "updated_at",  null: false
     t.string   "first_name"
     t.string   "last_name"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "user1_id"
+    t.integer  "user2_id"
+    t.boolean  "user1_key"
+    t.boolean  "user2_key"
+    t.boolean  "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,6 +83,10 @@ ActiveRecord::Schema.define(version: 20151106161858) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
