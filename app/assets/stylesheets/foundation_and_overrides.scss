@@ -114,7 +114,9 @@ $tuatara     : #444444;
 $oil         : #333333;
 $jet         : #222222;
 $black       : #000000;
-$purple		 : #6675B9;
+$dark-purple : #37107B;
+$light-purple: #A182D6;
+$green		 : #4FCC54;
 $blue        : #71A7FE;
 
 // We use these as default colors throughout
@@ -126,8 +128,8 @@ $blue        : #71A7FE;
 // $info-color: #a0d3e8;
 
 // We use these to control various global styles
-// $body-bg: $white;
-$body-font-color: $jet;
+$body-bg: $dark-purple;
+$body-font-color: $black;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -215,7 +217,7 @@ $body-font-color: $jet;
 // $header-font-family: $body-font-family;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
-// $header-font-color: $jet;
+$header-font-color: $white;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -468,7 +470,7 @@ $button-font-color: $white;
 // We use these to control button border styles.
 // $button-border-width: 0;
 // $button-border-style: solid;
-$button-bg-color: $blue;
+$button-bg-color: $green;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -646,6 +648,7 @@ $include-html-clearing-classes: $include-html-classes;
 // $form-label-font-weight: $font-weight-normal;
 // $form-label-line-height: 1.5;
 // $form-label-font-color: scale-color($black, $lightness: 30%);
+   $form-label-font-color: $white;
 // $form-label-small-transform: capitalize;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
@@ -1405,7 +1408,7 @@ $icon-bar-bg: $white;
 $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: $purple;
+$topbar-bg-color: $dark-purple;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1425,10 +1428,10 @@ $topbar-bg: $topbar-bg-color;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: $blue;
+$topbar-link-bg-hover: $green;
 // $topbar-link-bg-color-hover: $charcoal;
-$topbar-link-bg-active: $blue;
-$topbar-link-bg-active-hover: scale-color($blue, $lightness: -14%);
+$topbar-link-bg-active: $green;
+$topbar-link-bg-active-hover: scale-color($green, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: ($topbar-height / 3);
@@ -1438,11 +1441,11 @@ $topbar-link-bg-active-hover: scale-color($blue, $lightness: -14%);
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: $purple;
+$topbar-dropdown-bg: $dark-purple;
 // $topbar-dropdown-link-color: $white;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
-$topbar-dropdown-link-bg: $purple;
-$topbar-dropdown-link-bg-hover: $blue;
+$topbar-dropdown-link-bg: $light-purple;
+$topbar-dropdown-link-bg-hover: $green;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
@@ -1452,7 +1455,7 @@ $topbar-dropdown-link-bg-hover: $blue;
 // $topbar-dropdown-label-text-transform: uppercase;
 // $topbar-dropdown-label-font-weight: $font-weight-bold;
 // $topbar-dropdown-label-font-size: rem-calc(10);
-$topbar-dropdown-label-bg: $purple;
+$topbar-dropdown-label-bg: $dark-purple;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;

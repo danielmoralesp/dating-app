@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<title><%= content_for?(:title) ? yield(:title) : "Dating App" %></title>
+	<title><%= content_for?(:title) ? yield(:title) : "ottr" %></title>
 
 	<%= stylesheet_link_tag    "application" %>
 	<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -15,8 +15,9 @@
 	<nav class="top-bar" data-topbar data-no-turbolink role="navigation">
 		<ul class="title-area">
 			<li class="name">
-				<h1><a href="#">Dating App</a></h1>
+				<h1><a href="#">ottr</a></h1>
 			</li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 		</ul>
 		<section class="top-bar-section">
 			<% if user_signed_in? %>
