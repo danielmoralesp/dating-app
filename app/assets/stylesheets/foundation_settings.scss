@@ -1,9 +1,8 @@
-$purple: #6675B9;
-$blue: #71A7FE;
-$white: #fff;
+
+@import 'foundation_and_overrides';
 
 .top-bar-section ul li {
-  background: $purple;
+  background: $dark-purple;
   color: $white;
   display: block;
 }

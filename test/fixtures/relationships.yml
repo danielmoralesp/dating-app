@@ -2,6 +2,12 @@
 
 one:
   user_id: 1
+  ottr_id: 1
+  user_flag: 1
+  status: false
 
 two:
   user_id: 1
+  ottr_id: 1
+  user_flag: 1
+  status: false

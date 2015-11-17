@@ -1,0 +1,14 @@
+<% @other_users.each do |o| %>
+
+
+<div class="row">
+	<div class="panel small-12 columns">
+		<%= link_to "X", root_path, class: "button round alert" %>
+		<%= image_tag(o.image.url(:medium)) %>
+		<%= link_to "<3", root_path, class: "button round success" %><br />
+		<p><%= o.profile.bio %></p><br />
+		<p><%= o.username %></p><br /><br />
+	</div>
+</div>
+
+<% end %>

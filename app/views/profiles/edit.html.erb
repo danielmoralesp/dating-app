@@ -1,0 +1,20 @@
+<%= form_for @current_profile do |f| %>
+
+<%= f.fields_for @current_user do |u| %>
+<div class="form">
+	<%= u.label :image, class: "small-12 columns" %>
+	<%= u.file_field :image %>
+</div>
+
+<% end %>
+
+<div class="form">
+	<%= f.label :bio, class: "small-12 columns" %>
+	<%= f.text_field :bio %>
+</div>
+
+<div class="actions">
+	<%= f.submit "Update", class: "button" %>
+</div>
+
+<% end %>
