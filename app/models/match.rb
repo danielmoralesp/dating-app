@@ -1,3 +1,4 @@
 class Match < ActiveRecord::Base
-	has_many :users
+	belongs_to :user
+	belongs_to :matchee, class_name: :User
 end

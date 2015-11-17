@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113212106) do
+ActiveRecord::Schema.define(version: 20151116202711) do
 
   create_table "matches", force: :cascade do |t|
-    t.integer  "user1_id"
-    t.integer  "user2_id"
+    t.integer  "user_id"
+    t.integer  "matchee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,11 +56,10 @@ ActiveRecord::Schema.define(version: 20151113212106) do
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.integer  "user1_id"
-    t.integer  "user2_id"
-    t.boolean  "user1_key"
-    t.boolean  "user2_key"
-    t.boolean  "active"
+    t.integer  "user_id"
+    t.integer  "ottr_id"
+    t.integer  "user_flag"
+    t.boolean  "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

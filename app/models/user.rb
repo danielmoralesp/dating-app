@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable
 
   has_one :profile, dependent: :destroy
-  has_many :matches
+  has_many :ottrs, through: :relationships
+  has_many :matchees, through: :matches
   has_many :relationships
   
   accepts_nested_attributes_for :profile
@@ -20,3 +21,8 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 8, maximum: 120}, on: :update, allow_blank: :true
   
 end
+
+
+# current_user.matchees << @other_user
+
+# Match.where(user_id: @other_user or matchee_id: @other_user).uniq

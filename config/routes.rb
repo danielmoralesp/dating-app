@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     get "users/:id/profile/edit", :controller => "users", :action => "edit_profile", as: :edit_profile
     patch "users/:id/profile/edit" => 'users#update_profile'
 
+    get '/matches' => 'matches#index'
+
     
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
