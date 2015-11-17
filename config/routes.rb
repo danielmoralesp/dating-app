@@ -19,6 +19,13 @@ Rails.application.routes.draw do
 
     get '/matches' => 'matches#index'
 
+    resources :matches do
+      member do
+        get 'set_like'
+        get 'set_dislike'
+      end
+    end
+
     
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
