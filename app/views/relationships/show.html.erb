@@ -1,2 +1,13 @@
-<h1>Relationships#index</h1>
-<p>Find me in app/views/relationships/index.html.erb</p>
+<% @current_relationship = Relationship.find(params[:id]) %>
+<% puts @current_relationship %>
+<h2>Hey, <%= current_user.username %>!  You're currently matched with 
+	<% if @current_relationship.user_id == current_user.id %>
+	<% @current_match = User.find(@current_relationship.ottr_id) %>
+	<%= @current_match.username %>
+	<% else %>
+	<% @current_match = User.find(@current_relationship.user_id) %>
+	<%= @current_match.username %>
+	<% end %>
+</h2>
+
+<%= image_tag(@current_match.image.url(:medium)) %>
