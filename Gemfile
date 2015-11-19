@@ -7,6 +7,10 @@ gem 'foundation-rails'
 gem 'paperclip'
 # Devise for user authentication
 gem 'devise'
+# Token generator for firebase/firechat
+gem 'firebase_token_generator'
+gem 'doorkeeper'
+gem 'omniauth'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

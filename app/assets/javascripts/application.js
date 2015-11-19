@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require firebase/firebase
+//= require firechat/dist/firechat.min
 
 //= require turbolinks
 //= require_tree .

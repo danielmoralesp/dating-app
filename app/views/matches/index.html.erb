@@ -2,13 +2,13 @@
 
 <div class="row">
 	<div class="panel small-12 columns">
-		<div class="dislike-button">
+		<!-- <div class="dislike-button"> -->
 			<%= link_to "X", set_dislike_match_path(@new_match, :id => o.id), :remote => true, class: "button round alert" %>
-		</div>
+		<!-- </div> -->
 		<%= image_tag(o.image.url(:medium)) %>
-		<div class="like-button">
+		<!-- <div class="like-button"> -->
 			<%= link_to "<3", set_like_match_path(@new_match, :id => o.id), :remote => true, class: "button round success" %><br />
-		</div>
+		<!-- </div> -->
 		<p><%= o.profile.bio %></p>
 		<p><%= o.username %></p>
 	</div>

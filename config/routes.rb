@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  use_doorkeeper
   get 'relationships/:id/' => 'relationships#show', as: :relationships
 
   root 'home#index'

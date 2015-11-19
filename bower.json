@@ -1,0 +1,22 @@
+{
+  "name": "dating-app",
+  "homepage": "https://github.com/zkrzyzanowski/dating-app",
+  "authors": [
+    "Zach Krzyzanowski <zkrzyz@gmail.com>"
+  ],
+  "description": "Ottr, dating app",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "firechat": "~2.0.1"
+  }
+}
