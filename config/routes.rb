@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'relationships/:id/' => 'relationships#show', as: :relationships
+
   root 'home#index'
 
   devise_for :users, :controllers => { 
