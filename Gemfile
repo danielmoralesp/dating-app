@@ -8,6 +8,8 @@ gem 'paperclip'
 # Devise for user authentication
 gem 'devise'
 
+gem 'acts-as-messageable'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
