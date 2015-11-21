@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'relationships/:id/' => 'relationships#show', as: :relationships
+  post 'relationships/:id/create' => 'relationships#create', as: :reply
 
   root 'home#index'
 

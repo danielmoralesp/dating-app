@@ -1,13 +1,17 @@
-<% @current_relationship = Relationship.find(params[:id]) %>
-<% puts @current_relationship %>
-<h2>Hey, <%= current_user.username %>!  You're currently matched with 
-	<% if @current_relationship.user_id == current_user.id %>
-	<% @current_match = User.find(@current_relationship.ottr_id) %>
+<h2>Hey, <%= @current_user.username %>!  You're currently matched with 
 	<%= @current_match.username %>
-	<% else %>
-	<% @current_match = User.find(@current_relationship.user_id) %>
-	<%= @current_match.username %>
-	<% end %>
 </h2>
 
-<%= image_tag(@current_match.image.url(:medium)) %>
+<%= image_tag(@current_match.image.url(:medium)) %><br /><br />
+
+<% @messages.each do |message| %>
+	<%= message.body %><br />
+<% end %>
+<br />
+
+
+<%= form_for :reply, :url => reply_path, :method => :post do |r| %>
+	<%= r.label "Reply" %>
+	<%= r.text_field :body %>
+	<%= r.submit "Send" %>
+<% end %>

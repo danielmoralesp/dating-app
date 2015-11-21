@@ -17,7 +17,6 @@ class ProfilesController < ApplicationController
 			redirect_to profile_path(@current_user)
 		else
 			flash[:alert] = "Your settings were not updated successfully."
-			binding.pry
 			render 'edit'
 		end
 	end
