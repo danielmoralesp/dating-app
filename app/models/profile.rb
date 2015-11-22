@@ -3,8 +3,6 @@ class Profile < ActiveRecord::Base
 
 	validates_presence_of :birthday, :gender, :looking_for, :on => :create
 
-	# accepts_nested_attributes_for :user
-
 	GENDER = ["male", "female", "other"]
 
 	def match_gender
