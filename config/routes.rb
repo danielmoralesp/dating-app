@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   get 'relationships/:id/' => 'relationships#show', as: :relationships
-  post 'relationships/:id/create' => 'relationships#create', as: :reply
+  post 'relationships/:id/create' => 'relationships#create_message', as: :reply
+  get 'relationships/:id/set_status/:user_flag' => 'relationships#set_status', as: :set_status_relationship
 
   root 'home#index'
 
@@ -9,13 +10,13 @@ Rails.application.routes.draw do
     :registrations =>  'registrations',
     # :sessions => 'sessions',
     # :passwords => 'passwords' 
-  }
     #:omniauth_callbacks => 'callbacks'
-
+  }
+    
     get "users/:id", :controller => "users", :action => "index", as: :user
     get "users/:id/settings", :controller => "users", :action => "edit", as: :edit_user
     patch "users/:id" => 'users#update', as: :update
-  
+
     get "users/:id/profile", :controller => "profiles", :action => "show", as: :profile
     get "users/:id/profile/edit", :controller => "users", :action => "edit_profile", as: :edit_profile
     patch "users/:id/profile/edit" => 'users#update_profile'
