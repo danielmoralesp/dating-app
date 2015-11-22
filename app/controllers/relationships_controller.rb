@@ -39,6 +39,6 @@ class RelationshipsController < ApplicationController
     @current_relationship.status = false
     @current_relationship.save
 
-    redirect_to root_path
+    redirect_to matches_path
   end
 end

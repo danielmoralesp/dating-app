@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  # Creates like/dislike route for matches to allow match to be created
+  get 'matches/:id/set_like' => 'matches#set_like', as: :set_like_match
+  get 'matches/:id/set_dislike' => 'matches#set_dislike', as: :set_dislike_match
+
+  # Relationship paths for showing current match, sending messages, 
   get 'relationships/:id/' => 'relationships#show', as: :relationships
   post 'relationships/:id/create' => 'relationships#create_message', as: :reply
   get 'relationships/:id/set_status/:user_flag' => 'relationships#set_status', as: :set_status_relationship
@@ -22,13 +27,6 @@ Rails.application.routes.draw do
     patch "users/:id/profile/edit" => 'users#update_profile'
 
     get '/matches' => 'matches#index'
-
-    resources :matches do
-      member do
-        get 'set_like'
-        get 'set_dislike'
-      end
-    end
 
     
   # The priority is based upon order of creation: first created -> highest priority.
