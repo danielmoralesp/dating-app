@@ -9,6 +9,7 @@ gem 'paperclip'
 gem 'devise'
 
 gem 'acts-as-messageable'
+gem 'gon'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

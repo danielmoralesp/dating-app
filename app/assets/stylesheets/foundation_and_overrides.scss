@@ -1131,7 +1131,7 @@ $icon-bar-bg: $white;
 // 25. Reveal
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-reveal-classes: $include-html-classes;
+$include-html-reveal-classes: $include-html-classes;
 
 // We use these to control the style of the reveal overlay.
 // $reveal-overlay-bg: rgba($black, .45);
@@ -1159,7 +1159,7 @@ $icon-bar-bg: $white;
 // We use these to control the modal border
 // $reveal-border-style: solid;
 // $reveal-border-width: 1px;
-// $reveal-border-color: $steel;
+$reveal-border-color: $light-purple;
 
 // $reveal-modal-class: "reveal-modal";
 // $close-reveal-modal-class: "close-reveal-modal";

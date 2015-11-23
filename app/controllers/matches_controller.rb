@@ -48,9 +48,13 @@ class MatchesController < ApplicationController
 
 		@all_matches.each do |m|
 			if m.user_id == @new_match.matchee_id && m.matchee_id == @new_match.user_id
-				Relationship.create(user_id: m.user_id, ottr_id: m.matchee_id, user_flag: 0, status: true)
-			else
-				@new_match.save
+				@new_match = Relationship.new(user_id: m.user_id, ottr_id: m.matchee_id, user_flag: 0, status: true)
+			end
+		end
+
+		if @new_match.save
+			respond_to do |format|
+				format.js
 			end
 		end
 
@@ -61,6 +65,10 @@ class MatchesController < ApplicationController
 		@new_match.user_id = current_user.id
 		@new_match.nonmatchee_id = params[:id]
 
-		@new_match.save
+		if @new_match.save
+			respond_to do |format|
+				format.js
+			end
+		end
 	end
 end

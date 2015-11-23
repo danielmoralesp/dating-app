@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_for :users, :controllers => { 
+    :registrations =>  'registrations'
+    # :sessions => 'sessions'
+    # :passwords => 'passwords' 
+    #:omniauth_callbacks => 'callbacks'
+  }
+
   # Creates like/dislike route for matches to allow match to be created
   get 'matches/:id/set_like' => 'matches#set_like', as: :set_like_match
   get 'matches/:id/set_dislike' => 'matches#set_dislike', as: :set_dislike_match
@@ -9,26 +16,22 @@ Rails.application.routes.draw do
   post 'relationships/:id/create' => 'relationships#create_message', as: :reply
   get 'relationships/:id/set_status/:user_flag' => 'relationships#set_status', as: :set_status_relationship
 
-  root 'home#index'
+  authenticated :user do
+      root :to => "matches#index", as: :authenticated_root
+    end
+    root :to => 'home#index'
 
-  devise_for :users, :controllers => { 
-    :registrations =>  'registrations',
-    # :sessions => 'sessions',
-    # :passwords => 'passwords' 
-    #:omniauth_callbacks => 'callbacks'
-  }
-    
-    get "users/:id", :controller => "users", :action => "index", as: :user
-    get "users/:id/settings", :controller => "users", :action => "edit", as: :edit_user
-    patch "users/:id" => 'users#update', as: :update
+  get "users/:id", :controller => "users", :action => "index", as: :user
+  get "users/:id/settings", :controller => "users", :action => "edit", as: :edit_user
+  patch "users/:id" => 'users#update', as: :update
 
-    get "users/:id/profile", :controller => "profiles", :action => "show", as: :profile
-    get "users/:id/profile/edit", :controller => "users", :action => "edit_profile", as: :edit_profile
-    patch "users/:id/profile/edit" => 'users#update_profile'
+  get "users/:id/profile", :controller => "profiles", :action => "show", as: :profile
+  get "users/:id/profile/edit", :controller => "users", :action => "edit_profile", as: :edit_profile
+  patch "users/:id/profile/edit" => 'users#update_profile'
 
-    get '/matches' => 'matches#index'
+  get '/matches' => 'matches#index'
 
-    
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

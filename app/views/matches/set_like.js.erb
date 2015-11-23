@@ -1,0 +1,7 @@
+var ready = function() {
+	$(".hide-match").on("ajax:success", function(e) {
+		$(".match").hide();
+	});
+};
+
+$(document).ready(ready);
