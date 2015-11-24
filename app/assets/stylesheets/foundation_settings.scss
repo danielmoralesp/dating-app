@@ -2,7 +2,7 @@
 @import 'foundation_and_overrides';
 
 .top-bar-section ul li {
-  background: $dark-purple;
+  background: $background;
   color: $white;
   display: block;
 }
@@ -11,4 +11,8 @@
 	p, h1, h2, h3, h4, h5, h6, label {
 		color: $black;
 	}
+}
+
+.fa {
+	color: $buttons;
 }

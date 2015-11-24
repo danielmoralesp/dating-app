@@ -114,10 +114,11 @@ $tuatara     : #444444;
 $oil         : #333333;
 $jet         : #222222;
 $black       : #000000;
-$dark-purple : #37107B;
-$light-purple: #A182D6;
-$green		 : #4FCC54;
+$background  : #37107B;
 $blue        : #71A7FE;
+$background	 : #EEDDDD;
+$buttons	 : #EE9977;
+$light-buttons : #DDBBAA;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
@@ -128,7 +129,7 @@ $blue        : #71A7FE;
 // $info-color: #a0d3e8;
 
 // We use these to control various global styles
-$body-bg: $dark-purple;
+$body-bg: $background;
 $body-font-color: $black;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
@@ -444,53 +445,53 @@ $header-font-color: $white;
 $include-html-button-classes: $include-html-classes;
 
 // We use these to build padding for buttons.
-// $button-tny: rem-calc(10);
-// $button-sml: rem-calc(14);
-// $button-med: rem-calc(16);
-// $button-lrg: rem-calc(18);
+// $buttons-tny: rem-calc(10);
+// $buttons-sml: rem-calc(14);
+// $buttons-med: rem-calc(16);
+// $buttons-lrg: rem-calc(18);
 
 // We use this to control the display property.
-// $button-display: inline-block;
-// $button-margin-bottom: rem-calc(20);
+// $buttons-display: inline-block;
+// $buttons-margin-bottom: rem-calc(20);
 
 // We use these to control button text styles.
-// $button-font-family: $body-font-family;
-$button-font-color: $white;
-// $button-font-color-alt: $oil;
-// $button-font-tny: rem-calc(11);
-// $button-font-sml: rem-calc(13);
-// $button-font-med: rem-calc(16);
-// $button-font-lrg: rem-calc(20);
-// $button-font-weight: $font-weight-normal;
-// $button-font-align: center;
+// $buttons-font-family: $body-font-family;
+$buttons-font-color: $white;
+// $buttons-font-color-alt: $oil;
+// $buttons-font-tny: rem-calc(11);
+// $buttons-font-sml: rem-calc(13);
+// $buttons-font-med: rem-calc(16);
+// $buttons-font-lrg: rem-calc(20);
+// $buttons-font-weight: $font-weight-normal;
+// $buttons-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: -20%;
+// $buttons-function-factor: -20%;
 
 // We use these to control button border styles.
-// $button-border-width: 0;
-// $button-border-style: solid;
-$button-bg-color: $green;
-// $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
-// $button-border-color: $button-bg-hover;
-// $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
+// $buttons-border-width: 0;
+// $buttons-border-style: solid;
+$buttons-bg-color: $buttons;
+// $buttons-bg-hover: scale-color($buttons-bg-color, $lightness: $buttons-function-factor);
+// $buttons-border-color: $buttons-bg-hover;
+// $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $buttons-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
-// $success-button-bg-hover: scale-color($success-color, $lightness: $button-function-factor);
+// $success-button-bg-hover: scale-color($success-color, $lightness: $buttons-function-factor);
 // $success-button-border-color: $success-button-bg-hover;
-// $alert-button-bg-hover: scale-color($alert-color, $lightness: $button-function-factor);
+// $alert-button-bg-hover: scale-color($alert-color, $lightness: $buttons-function-factor);
 // $alert-button-border-color: $alert-button-bg-hover;
-// $warning-button-bg-hover: scale-color($warning-color, $lightness: $button-function-factor);
+// $warning-button-bg-hover: scale-color($warning-color, $lightness: $buttons-function-factor);
 // $warning-button-border-color: $warning-button-bg-hover;
-// $info-button-bg-hover: scale-color($info-color, $lightness: $button-function-factor);
+// $info-button-bg-hover: scale-color($info-color, $lightness: $buttons-function-factor);
 // $info-button-border-color: $info-button-bg-hover;
 
 // We use this to set the default radius used throughout the core.
-// $button-radius: $global-radius;
-// $button-round: $global-rounded;
+// $buttons-radius: $global-radius;
+// $buttons-round: $global-rounded;
 
 // We use this to set default opacity and cursor for disabled buttons.
-// $button-disabled-opacity: .7;
-// $button-disabled-cursor: $cursor-default-value;
+// $buttons-disabled-opacity: .7;
+// $buttons-disabled-cursor: $cursor-default-value;
 
 // 06. Button Groups
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -498,8 +499,8 @@ $button-bg-color: $green;
 // $include-html-button-classes: $include-html-classes;
 
 // Sets the margin for the right side by default, and the left margin if right-to-left direction is used
-// $button-bar-margin-opposite: rem-calc(10);
-// $button-group-border-width: 1px;
+// $buttons-bar-margin-opposite: rem-calc(10);
+// $buttons-group-border-width: 1px;
 
 // 07. Clearing
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -592,34 +593,34 @@ $include-html-clearing-classes: $include-html-classes;
 // $dropdown-button-pip-color-alt: $oil;
 
 // We use these to set the size of the pip in dropdown buttons
-// $button-pip-tny: rem-calc(6);
-// $button-pip-sml: rem-calc(7);
-// $button-pip-med: rem-calc(9);
-// $button-pip-lrg: rem-calc(11);
+// $buttons-pip-tny: rem-calc(6);
+// $buttons-pip-sml: rem-calc(7);
+// $buttons-pip-med: rem-calc(9);
+// $buttons-pip-lrg: rem-calc(11);
 
 // We use these to style tiny dropdown buttons
-// $dropdown-button-padding-tny: $button-pip-tny * 7;
-// $dropdown-button-pip-size-tny: $button-pip-tny;
-// $dropdown-button-pip-opposite-tny: $button-pip-tny * 3;
-// $dropdown-button-pip-top-tny: (-$button-pip-tny / 2) + rem-calc(1);
+// $dropdown-button-padding-tny: $buttons-pip-tny * 7;
+// $dropdown-button-pip-size-tny: $buttons-pip-tny;
+// $dropdown-button-pip-opposite-tny: $buttons-pip-tny * 3;
+// $dropdown-button-pip-top-tny: (-$buttons-pip-tny / 2) + rem-calc(1);
 
 // We use these to style small dropdown buttons
-// $dropdown-button-padding-sml: $button-pip-sml * 7;
-// $dropdown-button-pip-size-sml: $button-pip-sml;
-// $dropdown-button-pip-opposite-sml: $button-pip-sml * 3;
-// $dropdown-button-pip-top-sml: (-$button-pip-sml / 2) + rem-calc(1);
+// $dropdown-button-padding-sml: $buttons-pip-sml * 7;
+// $dropdown-button-pip-size-sml: $buttons-pip-sml;
+// $dropdown-button-pip-opposite-sml: $buttons-pip-sml * 3;
+// $dropdown-button-pip-top-sml: (-$buttons-pip-sml / 2) + rem-calc(1);
 
 // We use these to style medium dropdown buttons
-// $dropdown-button-padding-med: $button-pip-med * 6 + rem-calc(3);
-// $dropdown-button-pip-size-med: $button-pip-med - rem-calc(3);
-// $dropdown-button-pip-opposite-med: $button-pip-med * 2.5;
-// $dropdown-button-pip-top-med: (-$button-pip-med / 2) + rem-calc(2);
+// $dropdown-button-padding-med: $buttons-pip-med * 6 + rem-calc(3);
+// $dropdown-button-pip-size-med: $buttons-pip-med - rem-calc(3);
+// $dropdown-button-pip-opposite-med: $buttons-pip-med * 2.5;
+// $dropdown-button-pip-top-med: (-$buttons-pip-med / 2) + rem-calc(2);
 
 // We use these to style large dropdown buttons
-// $dropdown-button-padding-lrg: $button-pip-lrg * 5 + rem-calc(3);
-// $dropdown-button-pip-size-lrg: $button-pip-lrg - rem-calc(6);
-// $dropdown-button-pip-opposite-lrg: $button-pip-lrg * 2.5;
-// $dropdown-button-pip-top-lrg: (-$button-pip-lrg / 2) + rem-calc(3);
+// $dropdown-button-padding-lrg: $buttons-pip-lrg * 5 + rem-calc(3);
+// $dropdown-button-pip-size-lrg: $buttons-pip-lrg - rem-calc(6);
+// $dropdown-button-pip-opposite-lrg: $buttons-pip-lrg * 2.5;
+// $dropdown-button-pip-top-lrg: (-$buttons-pip-lrg / 2) + rem-calc(3);
 
 // 10. Flex Video
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1159,7 +1160,7 @@ $include-html-reveal-classes: $include-html-classes;
 // We use these to control the modal border
 // $reveal-border-style: solid;
 // $reveal-border-width: 1px;
-$reveal-border-color: $light-purple;
+$reveal-border-color: $light-buttons;
 
 // $reveal-modal-class: "reveal-modal";
 // $close-reveal-modal-class: "close-reveal-modal";
@@ -1214,31 +1215,31 @@ $reveal-border-color: $light-purple;
 // $split-button-active-bg-tint: rgba(0,0,0,0.1);
 
 // We use these to control tiny split buttons
-// $split-button-padding-tny: $button-pip-tny * 10;
-// $split-button-span-width-tny: $button-pip-tny * 6;
-// $split-button-pip-size-tny: $button-pip-tny;
-// $split-button-pip-top-tny: $button-pip-tny * 2;
+// $split-button-padding-tny: $buttons-pip-tny * 10;
+// $split-button-span-width-tny: $buttons-pip-tny * 6;
+// $split-button-pip-size-tny: $buttons-pip-tny;
+// $split-button-pip-top-tny: $buttons-pip-tny * 2;
 // $split-button-pip-default-float-tny: rem-calc(-6);
 
 // We use these to control small split buttons
-// $split-button-padding-sml: $button-pip-sml * 10;
-// $split-button-span-width-sml: $button-pip-sml * 6;
-// $split-button-pip-size-sml: $button-pip-sml;
-// $split-button-pip-top-sml: $button-pip-sml * 1.5;
+// $split-button-padding-sml: $buttons-pip-sml * 10;
+// $split-button-span-width-sml: $buttons-pip-sml * 6;
+// $split-button-pip-size-sml: $buttons-pip-sml;
+// $split-button-pip-top-sml: $buttons-pip-sml * 1.5;
 // $split-button-pip-default-float-sml: rem-calc(-6);
 
 // We use these to control medium split buttons
-// $split-button-padding-med: $button-pip-med * 9;
-// $split-button-span-width-med: $button-pip-med * 5.5;
-// $split-button-pip-size-med: $button-pip-med - rem-calc(3);
-// $split-button-pip-top-med: $button-pip-med * 1.5;
+// $split-button-padding-med: $buttons-pip-med * 9;
+// $split-button-span-width-med: $buttons-pip-med * 5.5;
+// $split-button-pip-size-med: $buttons-pip-med - rem-calc(3);
+// $split-button-pip-top-med: $buttons-pip-med * 1.5;
 // $split-button-pip-default-float-med: rem-calc(-6);
 
 // We use these to control large split buttons
-// $split-button-padding-lrg: $button-pip-lrg * 8;
-// $split-button-span-width-lrg: $button-pip-lrg * 5;
-// $split-button-pip-size-lrg: $button-pip-lrg - rem-calc(6);
-// $split-button-pip-top-lrg: $button-pip-lrg + rem-calc(5);
+// $split-button-padding-lrg: $buttons-pip-lrg * 8;
+// $split-button-span-width-lrg: $buttons-pip-lrg * 5;
+// $split-button-pip-size-lrg: $buttons-pip-lrg - rem-calc(6);
+// $split-button-pip-top-lrg: $buttons-pip-lrg + rem-calc(5);
 // $split-button-pip-default-float-lrg: rem-calc(-6);
 
 // 28. Sub Nav
@@ -1408,7 +1409,7 @@ $reveal-border-color: $light-purple;
 $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: $dark-purple;
+$topbar-bg-color: $background;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1428,10 +1429,10 @@ $topbar-bg: $topbar-bg-color;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: $green;
+$topbar-link-bg-hover: $buttons;
 // $topbar-link-bg-color-hover: $charcoal;
-$topbar-link-bg-active: $green;
-$topbar-link-bg-active-hover: scale-color($green, $lightness: -14%);
+$topbar-link-bg-active: $buttons;
+$topbar-link-bg-active-hover: scale-color($buttons, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: ($topbar-height / 3);
@@ -1441,11 +1442,11 @@ $topbar-link-bg-active-hover: scale-color($green, $lightness: -14%);
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: $dark-purple;
+$topbar-dropdown-bg: $background;
 // $topbar-dropdown-link-color: $white;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
-$topbar-dropdown-link-bg: $light-purple;
-$topbar-dropdown-link-bg-hover: $green;
+$topbar-dropdown-link-bg: $light-buttons;
+$topbar-dropdown-link-bg-hover: $buttons;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
@@ -1455,7 +1456,7 @@ $topbar-dropdown-link-bg-hover: $green;
 // $topbar-dropdown-label-text-transform: uppercase;
 // $topbar-dropdown-label-font-weight: $font-weight-bold;
 // $topbar-dropdown-label-font-size: rem-calc(10);
-$topbar-dropdown-label-bg: $dark-purple;
+$topbar-dropdown-label-bg: $background;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;
