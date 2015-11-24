@@ -14,9 +14,14 @@
 //= require jquery_ujs
 //= require foundation
 
-//= require turbolinks
+
 //= require_tree .
 
 // $(document).foundation();
 
 $(function(){ $(document).foundation(); });
+
+$(".hide-match").click(function(){
+	console.log("click");
+    $(".match").hide();
+});
