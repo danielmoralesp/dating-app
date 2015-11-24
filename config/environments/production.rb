@@ -88,3 +88,5 @@ Rails.application.configure do
    :enable_starttls_auto => true
  }
 end
+
+Rails.application.routes.default_url_options[:host] = 'http://ec2-54-85-50-250.compute-1.amazonaws.com'
