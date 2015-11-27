@@ -1,21 +1,24 @@
 <% if @other_users.empty? %>
 <h2>You're out of matches :(</h2>
 <% else %>
-<% @other_users.each_with_index do |o, index| %>
-<% @match_number = "match" + index.to_s %>
+<% @other_users.each do |o| %>
 
 <div class="row match">
 	<div class="panel small-12 columns">
+		<div class="small-4 columns">
+			
+			<%= image_tag(o.image.url(:medium)) %><br />
 
-		<%= link_to "", set_dislike_match_path(@new_match, :id => o.id), :remote => true, class: "fa fa-4x fa-times hide-match" %>
-		
-		<%= image_tag(o.image.url(:medium)) %>
 
-		<%= link_to "", set_like_match_path(@new_match, :id => o.id), :remote => true, class: "fa fa-4x fa-heart hide-match" %><br />
+			<%= link_to image_tag("x_ro.gif"), set_dislike_match_path(@new_match, :id => o.id), :remote => true, class: "hide-match" %>
 
-		<p><%= o.profile.bio %></p>
-		<p><%= o.username %></p>
-	</div>
+			<%= link_to image_tag("heart_ro.gif"), set_like_match_path(@new_match, :id => o.id), :remote => true, class: "hide-match" %><br />
+		</div>
+		<div class="small-8 columns">
+			<h1><%= o.username %></h1>
+			<h2><%= '"' + o.profile.bio + '"' %></h2>
+		</div>
+</div>
 </div>
 
 <% end %>
