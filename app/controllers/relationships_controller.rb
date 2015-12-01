@@ -7,38 +7,43 @@ class RelationshipsController < ApplicationController
   end
 
   def show
+
   	if @current_relationship.user_id == current_user.id
   		@current_match = User.find(@current_relationship.ottr_id)
   	else
   		@current_match = User.find(@current_relationship.user_id)
   	end
 
-  	@messages_sent = @current_user.messages.are_from(@current_user).are_to(@current_match)
-  	@messages_received = @current_user.messages.are_from(@current_match).are_to(@current_user)
-  	@messages = (@messages_sent + @messages_received).reverse
-  	@reply = ActsAsMessageable::Message.new
+    @messages_sent = @current_user.messages.are_from(@current_user).are_to(@current_match)
+    @messages_received = @current_user.messages.are_from(@current_match).are_to(@current_user)
+    @messages = (@messages_sent + @messages_received)
+    @reply = ActsAsMessageable::Message.new
+
+    if @current_relationship.ottr_id == current_user.id
+      @messages = @messages.reverse
+    end
 
   end
 
   def create_message
 
-  	if @current_relationship.user_id == current_user.id
-  		@current_match = User.find(@current_relationship.ottr_id)
-  	else
-  		@current_match = User.find(@current_relationship.user_id)
-  	end
-
-    @to = @current_match
-
-    @current_user.send_message(@to, params[:reply][:body])
-    redirect_to relationships_path
+   if @current_relationship.user_id == current_user.id
+    @current_match = User.find(@current_relationship.ottr_id)
+  else
+    @current_match = User.find(@current_relationship.user_id)
   end
 
-  def set_status
-    @current_relationship.user_flag = params[:user_flag]
-    @current_relationship.status = false
-    @current_relationship.save
+  @to = @current_match
 
-    redirect_to matches_path
-  end
+  @current_user.send_message(@to, params[:reply][:body])
+  redirect_to relationships_path
+end
+
+def set_status
+  @current_relationship.user_flag = params[:user_flag]
+  @current_relationship.status = false
+  @current_relationship.save
+
+  redirect_to matches_path
+end
 end

@@ -48,12 +48,14 @@ class MatchesController < ApplicationController
 
 		@all_matches.each do |m|
 			if m.user_id == @new_match.matchee_id && m.matchee_id == @new_match.user_id
-				@new_match = Relationship.new(user_id: m.user_id, ottr_id: m.matchee_id, user_flag: 0, status: true)
+				@new_relationship = Relationship.create(user_id: m.user_id, ottr_id: m.matchee_id, user_flag: 0, status: true)
+				# redirect_to root_path
 			end
 		end
 
 		if @new_match.save
 			respond_to do |format|
+				format.html
 				format.js
 			end
 		end
@@ -67,6 +69,7 @@ class MatchesController < ApplicationController
 
 		if @new_match.save
 			respond_to do |format|
+				format.html
 				format.js
 			end
 		end

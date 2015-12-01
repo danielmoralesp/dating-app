@@ -1,19 +1,22 @@
-<h2>Hey, <%= @current_user.username %>!  You're currently matched with 
-	<%= @current_match.username %>
-</h2>
+<div class="panel">
+	<h2>Hey, <%= @current_user.username %>!  You're currently matched with 
+		<%= @current_match.username %>
+	</h2>
+</div>
 
 <%= image_tag(@current_match.image.url(:medium)) %><br /><br />
 
 <% @messages.each do |message| %>
-	<%= message.body %><br />
+<%= message.body %> from <strong><%= User.find(message.sent_messageable_id).username %></strong>
+<br />
 <% end %>
 <br />
 
 
 <%= form_for :reply, :url => reply_path, :method => :post do |r| %>
-	<%= r.label "Reply" %>
-	<%= r.text_field :body %>
-	<%= r.submit "Send", class: "button" %>
+<%= r.label "Reply" %>
+<%= r.text_field :body %>
+<%= r.submit "Send", class: "custom-button" %>
 <% end %>
 
 <%= link_to "Unmatch", set_status_relationship_path(@current_relationship, :id => @current_relationship, :user_flag => 1, :remote => true, class: "button round") %>
