@@ -1,4 +1,4 @@
-Getting Started
+Ottr
 ===============
 
 Ottr is a modern dating site with old school romantic sensibilities
