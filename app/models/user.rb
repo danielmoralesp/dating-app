@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  before_create :generate_authentication_token!
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable :validatable
   devise :confirmable, :database_authenticatable, :registerable,
@@ -19,12 +21,19 @@ class User < ActiveRecord::Base
 
   validates_presence_of :username
   validates_uniqueness_of :email, :username
+  validates :auth_token, uniqueness: true
 
   has_attached_file :image, :styles => { :medium => "300x300", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   validates :password, presence: true, length: {minimum: 8, maximum: 120}, on: :create
   validates :password, length: {minimum: 8, maximum: 120}, on: :update, allow_blank: :true
+
+  def generate_authentication_token!
+    begin
+      self.auth_token = Devise.friendly_token
+    end while self.class.exists?(auth_token: auth_token)
+  end
   
 end
 
