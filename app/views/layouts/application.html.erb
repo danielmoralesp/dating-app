@@ -12,42 +12,29 @@
 </head>
 
 <body>
-	<nav class="top-bar" data-topbar data-no-turbolink role="navigation">
-		<ul class="title-area">
-			<li class="name">
-				<h1><%= link_to "ottr", root_path %></h1>
-			</li>
-			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-		</ul>
-		<section class="top-bar-section">
-			<% if user_signed_in? %>
+	<header class="navigation" role="banner">
+		<div class="navigation-wrapper">
+			<a href="javascript:void(0)" class="logo">
+				<%= image_tag "bg-white.png" %>
+			</a>
+			<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+			<nav role="navigation">
+				<ul id="js-navigation-menu" class="navigation-menu show">
+					<% if user_signed_in? %>
 
-			<ul class="right">
-				<li><%= link_to "Home", root_path %></li>
-				<li class="has-dropdown">
-					<a href="#">Account</a>
-					<ul class="dropdown">
-						<li><%= link_to "Profile", (profile_path current_user.profile.id) %></li>
-						<li><%= link_to "Settings", (edit_user_path current_user) %></li>
-						<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-					</ul>
-				</li>
-			</ul>
-
-			<% else %>
-			<ul class="right">
+					<li class="nav-link"><%= link_to "Home", root_path %></li>
+					<li class="nav-link"><%= link_to "Profile", (profile_path current_user.profile.id) %></li>
+					<li class="nav-link"><%= link_to "Settings", (edit_user_path current_user) %></li>
+					<li class="nav-link"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+				</ul>
+				<% else %>
 				<li>Already have an account? &nbsp</li>
-				<li class="active">
-					<%= link_to "Log In", '#', data: {:'reveal-id' => 'loginModal'} %>
-					<div id="loginModal" class="reveal-modal" data-reveal aria-hidden="true" role="dialog">
-						<%= render 'users/sessions/new' %>
-						<a class="close-reveal-modal">&#215;</a>
-					</div>
+				<li>
+					<%= link_to "Log In", new_user_session_path %>
 				</li>
 			</ul>
 			<% end %>
-		</section>
-	</nav>
+	</header>
 
 	
 

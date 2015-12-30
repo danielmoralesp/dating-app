@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
+ruby '2.2.3'
 
 # ADDED GEMS
-# Zurb Foundation Gem
-gem 'foundation-rails'
 # Paperclip for adding images
 gem 'paperclip'
 # Devise for user authentication
