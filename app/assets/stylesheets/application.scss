@@ -11,15 +11,20 @@
  * file per style scope.
  *
 
-
- *= require_tree .
- *= require_self
-
- *= require foundation_and_overrides
- *= require foundation_settings
- 
-
 */
 
-// @import "font-awesome-sprockets";
-// @import "font-awesome";
+@import 'bourbon/bourbon';
+@import "base/base";
+@import "neat/neat";
+@import 'refills/navbar';
+
+@import 'home';
+@import 'matches';
+@import 'profiles';
+@import 'relationships';
+@import 'settings';
+@import 'users';
+
+body {
+	background-color: $background;
+}

@@ -9,16 +9,17 @@
 			
 			<%= image_tag(o.image.url(:medium)) %><br />
 
-
 			<%= link_to image_tag("x_ro.gif"), set_dislike_match_path(@new_match, :id => o.id), :remote => true, class: "hide-match" %>
 
 			<%= link_to image_tag("heart_ro.gif"), set_like_match_path(@new_match, :id => o.id), :remote => true, class: "hide-match" %><br />
 		</div>
 		<div class="small-8 columns">
 			<h1><%= o.username %></h1>
+			<% if o.profile.bio %>
 			<h2><%= '"' + o.profile.bio + '"' %></h2>
+			<% end %>
 		</div>
-</div>
+	</div>
 </div>
 
 <% end %>
