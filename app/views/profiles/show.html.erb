@@ -8,13 +8,13 @@
 
         <div class="panel">
           <h3><%= @current_user.username %></h3><hr />
-          <h5 class="subheader"><%= @current_profile.bio %>
+          <h5 class="subheader"><%= @current_user.profile.bio %>
           </h5>
         </div>
 
       </div>
     </div>
-    <%= link_to "Edit Profile", edit_profile_path(@current_profile), class: "custom-button" %>
+    <%= link_to "Edit Profile", edit_profile_path(@current_user), class: "custom-button" %>
   </div>
 
 </div>
